@@ -5,7 +5,7 @@
  */
 import { createStackNavigator } from 'react-navigation-stack';
 
-import FirstScreen from '../containers/FirstScreen';
+import HomeScreen from '../containers/Home/HomeScreen';
 import SplashScreen from '../containers/SplashScreen';
 
 const AppNavigation = createStackNavigator(
@@ -13,8 +13,8 @@ const AppNavigation = createStackNavigator(
     Splash: {
       screen: SplashScreen
     },
-    First: {
-      screen: FirstScreen
+    Home: {
+      screen: HomeScreen
     }
   },
   {

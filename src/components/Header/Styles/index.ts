@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
-import {Platform} from 'react-native';
+import { Platform } from 'react-native';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 
-import {Colors} from '../../../theme';
+import { Colors } from '../../../theme';
 import FontHelper from '../../../helpers/FontHelper';
 
 export default EStyleSheet.create({
@@ -72,9 +72,9 @@ export default EStyleSheet.create({
     left: '15%',
   },
   titleTxt: {
-    ...FontHelper.font({fontWeight: '500'}),
+    ...FontHelper.font({ fontWeight: '500' }),
     fontSize: '18rem',
-    color: Colors.black,
+    color: Colors.white,
     top: '5rem',
     '@media android': {
       top: 0,

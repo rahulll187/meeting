@@ -28,7 +28,7 @@ class SplashScreen extends React.PureComponent<Props> {
 
   componentDidMount() {
     const {navigation} = this.props;
-    navigation.navigate('First');
+    navigation.navigate('Home');
   }
 
   render() {
