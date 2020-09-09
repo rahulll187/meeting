@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { View, Button, StatusBar, TouchableOpacity, Image } from 'react-native';
+import { View, TextInput, StatusBar, TouchableOpacity, Image, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Container, Content, Header } from '../../components';
@@ -15,7 +15,14 @@ export interface Props {
   navigation: any;
 }
 
-class HomeScreen extends React.PureComponent<Props> {
+export interface State {
+  navigation: any;
+}
+
+class HomeScreen extends React.PureComponent<Props, State> {
+  setState: any;
+  state: { color: string; };
+  props: { navigation: any; };
   constructor(props: Props) {
     super(props);
   }
@@ -29,20 +36,31 @@ class HomeScreen extends React.PureComponent<Props> {
           barStyle="light-content"
           backgroundColor={Colors.green}
         />
-        <Header title={'Home Screen'} style={styles.headerStyle} titleStyle={styles.headerTxt}>
+        <Header title={'Events'} style={styles.headerStyle} titleStyle={styles.headerTxt}>
           <TouchableOpacity style={styles.drawerBtn}>
             <Image source={Images.menuIcon} style={styles.drawerBtnImg} />
           </TouchableOpacity>
         </Header>
-        <Content>
-          <View style={styles.nextScreenBtn}>
-            <Button
-              title="Next Screen"
-              onPress={() => {
-                navigation.navigate('Second');
-              }}
+        <Content style={styles.container}>
+          <Text style={styles.topTitleTxt}>Event Creation</Text>
+          <View style={styles.topBlackLine} />
+          <View style={styles.inputTxtView}>
+            <Text style={styles.lableTxt}>Event Name</Text>
+            <TextInput
+              style={styles.inputBox}
+            />
+            <Text style={styles.lableTxt}>Event Venue</Text>
+            <TextInput
+              style={styles.inputBox}
+            />
+            <Text style={styles.lableTxt}>Description</Text>
+            <TextInput
+              style={styles.inputBox}
             />
           </View>
+          <TouchableOpacity style={styles.uploadImgBtn}>
+            <Text style={styles.btnTxt}>UPLOAD</Text>
+          </TouchableOpacity>
         </Content>
       </Container>
     );
