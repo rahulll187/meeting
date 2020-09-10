@@ -7,6 +7,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import HomeScreen from '../containers/Home/HomeScreen';
 import SplashScreen from '../containers/SplashScreen';
+import DrawerScreen from '../containers/DrawerNavigator/DrawerScreen';
 
 const AppNavigation = createStackNavigator(
   {
@@ -15,6 +16,9 @@ const AppNavigation = createStackNavigator(
     },
     Home: {
       screen: HomeScreen
+    },
+    Drawer: {
+      screen: DrawerScreen
     }
   },
   {

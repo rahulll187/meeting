@@ -15,7 +15,7 @@ if (!AppNavigator) {
 }
 
 const initialState = AppNavigator.router.getStateForAction(
-  Navigator.router.getActionForPathAndParams('Splash'),
+  Navigator.router.getActionForPathAndParams('Drawer'),
 );
 
 const reducer = (state: any = initialState, action: any) => {
