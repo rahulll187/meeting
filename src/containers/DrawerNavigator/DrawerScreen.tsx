@@ -22,8 +22,8 @@ import TeamScreen from '../Team/TeamScreen';
 import TeamComplaintsScreen from '../TeamComplaints/TeamComplaintsScreen';
 import TopDonorsScreen from '../TopDonors/TopDonorsScreen';
 import UploadImagesScreen from '../UploadImages/UploadImagesScreen';
-
-
+import HomeScreen from '../Home/HomeScreen';
+import { Colors } from '../../theme';
 
 export default class App extends Component {
   render() {
@@ -33,7 +33,7 @@ export default class App extends Component {
 
 const AddEventsStackNavigator = createStackNavigator(
   {
-    Profile: AddEventsScreen,
+    Events: HomeScreen,
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -46,6 +46,8 @@ const AddEventsStackNavigator = createStackNavigator(
             size={30}
           />
         ),
+        headerStyle: { backgroundColor: Colors.lightGreen },
+        headerTitleStyle: { color: Colors.grey }
       };
     },
   }
@@ -53,7 +55,7 @@ const AddEventsStackNavigator = createStackNavigator(
 
 const FeedbacksStackNavigator = createStackNavigator(
   {
-    Notification: FeedbacksScreen,
+    Feedbacks: FeedbacksScreen,
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -66,6 +68,8 @@ const FeedbacksStackNavigator = createStackNavigator(
             size={30}
           />
         ),
+        headerStyle: { backgroundColor: Colors.lightGreen },
+        headerTitleStyle: { color: Colors.grey }
       };
     },
   }
@@ -73,7 +77,7 @@ const FeedbacksStackNavigator = createStackNavigator(
 
 const IndividualStackNavigator = createStackNavigator(
   {
-    Contect: IndividualScreen,
+    Individual: IndividualScreen,
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -86,6 +90,8 @@ const IndividualStackNavigator = createStackNavigator(
             size={30}
           />
         ),
+        headerStyle: { backgroundColor: Colors.lightGreen },
+        headerTitleStyle: { color: Colors.grey }
       };
     },
   }
@@ -93,7 +99,7 @@ const IndividualStackNavigator = createStackNavigator(
 
 const NewMemberRequestsStackNavigator = createStackNavigator(
   {
-    List: NewMemberRequestsScreen,
+    MemberRequests: NewMemberRequestsScreen,
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -106,6 +112,8 @@ const NewMemberRequestsStackNavigator = createStackNavigator(
             size={30}
           />
         ),
+        headerStyle: { backgroundColor: Colors.lightGreen },
+        headerTitleStyle: { color: Colors.grey }
       };
     },
   }
@@ -113,7 +121,7 @@ const NewMemberRequestsStackNavigator = createStackNavigator(
 
 const OrganizationStackNavigator = createStackNavigator(
   {
-    Logout: OrganizationScreen,
+    Organization: OrganizationScreen,
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -126,6 +134,8 @@ const OrganizationStackNavigator = createStackNavigator(
             size={30}
           />
         ),
+        headerStyle: { backgroundColor: Colors.lightGreen },
+        headerTitleStyle: { color: Colors.grey }
       };
     },
   }
@@ -133,7 +143,7 @@ const OrganizationStackNavigator = createStackNavigator(
 
 const SharedMealStackNavigator = createStackNavigator(
   {
-    Logout: SharedMealScreen,
+    SharedMeal: SharedMealScreen,
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -146,6 +156,8 @@ const SharedMealStackNavigator = createStackNavigator(
             size={30}
           />
         ),
+        headerStyle: { backgroundColor: Colors.lightGreen },
+        headerTitleStyle: { color: Colors.grey }
       };
     },
   }
@@ -153,7 +165,7 @@ const SharedMealStackNavigator = createStackNavigator(
 
 const TeamStackNavigator = createStackNavigator(
   {
-    Logout: TeamScreen,
+    Team: TeamScreen,
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -166,6 +178,8 @@ const TeamStackNavigator = createStackNavigator(
             size={30}
           />
         ),
+        headerStyle: { backgroundColor: Colors.lightGreen },
+        headerTitleStyle: { color: Colors.grey }
       };
     },
   }
@@ -173,7 +187,7 @@ const TeamStackNavigator = createStackNavigator(
 
 const TeamComplaintsStackNavigator = createStackNavigator(
   {
-    Logout: TeamComplaintsScreen,
+    Complaints: TeamComplaintsScreen,
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -186,6 +200,8 @@ const TeamComplaintsStackNavigator = createStackNavigator(
             size={30}
           />
         ),
+        headerStyle: { backgroundColor: Colors.lightGreen },
+        headerTitleStyle: { color: Colors.grey }
       };
     },
   }
@@ -193,7 +209,7 @@ const TeamComplaintsStackNavigator = createStackNavigator(
 
 const TopDonorsStackNavigator = createStackNavigator(
   {
-    Logout: TopDonorsScreen,
+    Donors: TopDonorsScreen,
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -206,6 +222,8 @@ const TopDonorsStackNavigator = createStackNavigator(
             size={30}
           />
         ),
+        headerStyle: { backgroundColor: Colors.lightGreen },
+        headerTitleStyle: { color: Colors.grey }
       };
     },
   }
@@ -213,7 +231,7 @@ const TopDonorsStackNavigator = createStackNavigator(
 
 const UploadImagesStackNavigator = createStackNavigator(
   {
-    Logout: UploadImagesScreen,
+    UploadImages: UploadImagesScreen,
   },
   {
     defaultNavigationOptions: ({ navigation }) => {
@@ -226,6 +244,8 @@ const UploadImagesStackNavigator = createStackNavigator(
             size={30}
           />
         ),
+        headerStyle: { backgroundColor: Colors.lightGreen },
+        headerTitleStyle: { color: Colors.grey }
       };
     },
   }
@@ -233,50 +253,10 @@ const UploadImagesStackNavigator = createStackNavigator(
 
 const DrawerNavigator = createDrawerNavigator(
   {
-    AddEvent: {
-      screen: AddEventsStackNavigator,
-      navigationOptions: {
-        drawerIcon: ({ tintColor }) => (
-          <Icon name="user" size={16} color={tintColor} />
-        ),
-      },
-    },
-
-    Feedbacks: {
-      screen: FeedbacksStackNavigator,
-      navigationOptions: {
-        drawerIcon: ({ tintColor }) => (
-          <Icon name="user" size={16} color={tintColor} />
-        ),
-      },
-    },
     Individual: {
       screen: IndividualStackNavigator,
       navigationOptions: {
-        drawerIcon: ({ tintColor }) => (
-          <Icon name="user" size={16} color={tintColor} />
-        ),
-      },
-    },
-    List: {
-      screen: AddEventsStackNavigator,
-      navigationOptions: {
-        drawerIcon: ({ tintColor }) => (
-          <Icon name="user" size={16} color={tintColor} />
-        ),
-      },
-    },
-    Logout: {
-      screen: AddEventsStackNavigator,
-      navigationOptions: {
-        drawerIcon: ({ tintColor }) => (
-          <Icon name="user" size={16} color={tintColor} />
-        ),
-      },
-    },
-    NewMember: {
-      screen: NewMemberRequestsStackNavigator,
-      navigationOptions: {
+        drawerLabel: 'Individual',
         drawerIcon: ({ tintColor }) => (
           <Icon name="user" size={16} color={tintColor} />
         ),
@@ -285,14 +265,7 @@ const DrawerNavigator = createDrawerNavigator(
     Organization: {
       screen: OrganizationStackNavigator,
       navigationOptions: {
-        drawerIcon: ({ tintColor }) => (
-          <Icon name="user" size={16} color={tintColor} />
-        ),
-      },
-    },
-    SharedMeal: {
-      screen: SharedMealStackNavigator,
-      navigationOptions: {
+        drawerLabel: 'Organization',
         drawerIcon: ({ tintColor }) => (
           <Icon name="user" size={16} color={tintColor} />
         ),
@@ -301,6 +274,62 @@ const DrawerNavigator = createDrawerNavigator(
     Team: {
       screen: TeamStackNavigator,
       navigationOptions: {
+        drawerLabel: 'Team',
+        drawerIcon: ({ tintColor }) => (
+          <Icon name="user" size={16} color={tintColor} />
+        ),
+      },
+    },
+
+    UploadImages: {
+      screen: UploadImagesStackNavigator,
+      navigationOptions: {
+        drawerLabel: 'Upload Images',
+        drawerIcon: ({ tintColor }) => (
+          <Icon name="user" size={16} color={tintColor} />
+        ),
+      },
+    },
+    AddEvent: {
+      screen: AddEventsStackNavigator,
+      navigationOptions: {
+        drawerLabel: 'Add Events',
+        drawerIcon: ({ tintColor }) => (
+          <Icon name="user" size={16} color={tintColor} />
+        ),
+      },
+    },
+    SharedMeal: {
+      screen: SharedMealStackNavigator,
+      navigationOptions: {
+        drawerLabel: 'Shared Meal/Paid Donations',
+        drawerIcon: ({ tintColor }) => (
+          <Icon name="user" size={16} color={tintColor} />
+        ),
+      },
+    },
+    Feedbacks: {
+      screen: FeedbacksStackNavigator,
+      navigationOptions: {
+        drawerLabel: 'View Feedbacks',
+        drawerIcon: ({ tintColor }) => (
+          <Icon name="user" size={16} color={tintColor} />
+        ),
+      },
+    },
+    TopDonors: {
+      screen: TopDonorsStackNavigator,
+      navigationOptions: {
+        drawerLabel: 'Top Donors',
+        drawerIcon: ({ tintColor }) => (
+          <Icon name="user" size={16} color={tintColor} />
+        ),
+      },
+    },
+    NewMember: {
+      screen: NewMemberRequestsStackNavigator,
+      navigationOptions: {
+        drawerLabel: 'New Member Requests',
         drawerIcon: ({ tintColor }) => (
           <Icon name="user" size={16} color={tintColor} />
         ),
@@ -309,26 +338,13 @@ const DrawerNavigator = createDrawerNavigator(
     TeamComplaints: {
       screen: TeamComplaintsStackNavigator,
       navigationOptions: {
+        drawerLabel: 'Team Complaints',
         drawerIcon: ({ tintColor }) => (
           <Icon name="user" size={16} color={tintColor} />
         ),
       },
-      TopDonors: {
-        screen: TopDonorsStackNavigator,
-        navigationOptions: {
-          drawerIcon: ({ tintColor }) => (
-            <Icon name="user" size={16} color={tintColor} />
-          ),
-        },
-      },
-      UploadImages: {
-        screen: UploadImagesStackNavigator,
-        navigationOptions: {
-          drawerIcon: ({ tintColor }) => (
-            <Icon name="user" size={16} color={tintColor} />
-          ),
-        },
-      },
+
+
     },
   },
   {
@@ -345,8 +361,10 @@ const DrawerNavigator = createDrawerNavigator(
           />
         </View>
         {/* </ImageBackground> */}
-        <View style={{ flex: 1 }}>
+        <View style={styles.scrollViewStyle}>
+          <Text style={styles.drawerHeader}>Donation Reports</Text>
           <DrawerItems {...props} />
+          <View style={styles.line} />
         </View>
       </ScrollView>
     ),

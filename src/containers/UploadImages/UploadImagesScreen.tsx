@@ -5,7 +5,7 @@ export default class UploadImagesScreen extends Component {
   render() {
     return (
       <View style={{ alignItems: 'center' }}>
-        <Text>UploadImages Screen.tsx</Text>
+        <Text>UploadImages Screen</Text>
       </View>
     );
   }

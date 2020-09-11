@@ -18,7 +18,7 @@ export default EStyleSheet.create({
   topTitleTxt: {
     paddingLeft: '10rem',
     fontSize: '17rem',
-    marginTop: '15rem',
+    //marginTop: '15rem',
     color: Colors.lightGrey
   },
   topBlackLine: {

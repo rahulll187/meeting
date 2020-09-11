@@ -7,7 +7,7 @@ import React from 'react';
 import { View, TextInput, StatusBar, TouchableOpacity, Image, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Container, Content, Header } from '../../components';
+import { Container, Content } from '../../components';
 import styles from './Styles/index';
 import { Colors, Images } from '../../theme';
 
@@ -36,12 +36,7 @@ class HomeScreen extends React.PureComponent<Props, State> {
           barStyle="light-content"
           backgroundColor={Colors.green}
         />
-        <Header title={'Events'} style={styles.headerStyle} titleStyle={styles.headerTxt}>
-          <TouchableOpacity style={styles.drawerBtn}>
-            <Image source={Images.menuIcon} style={styles.drawerBtnImg} />
-          </TouchableOpacity>
-        </Header>
-        <Content style={styles.container}>
+        <Content>
           <Text style={styles.topTitleTxt}>Event Creation</Text>
           <View style={styles.topBlackLine} />
           <View style={styles.inputTxtView}>
