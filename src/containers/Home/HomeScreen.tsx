@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { View, TextInput, StatusBar, TouchableOpacity, Image, Text } from 'react-native';
+import { View, TextInput, StatusBar, TouchableOpacity, FlatList, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Container, Content } from '../../components';
@@ -30,7 +30,7 @@ class HomeScreen extends React.PureComponent<Props, State> {
   render() {
     const { navigation } = this.props;
     return (
-      <Container>
+      <View>
         <StatusBar
           translucent
           barStyle="light-content"
@@ -39,6 +39,26 @@ class HomeScreen extends React.PureComponent<Props, State> {
         <Content>
           <Text style={styles.topTitleTxt}>Event Creation</Text>
           <View style={styles.topBlackLine} />
+          <View style={styles.listMainView}>
+            <Image
+              style={styles.listImageStyle}
+              source={Images.img1}
+            />
+            <Image
+              style={styles.listImageStyle}
+              source={Images.img2}
+            />
+            <Image
+              style={styles.listImageStyle}
+              source={Images.img3}
+            />
+            <TouchableOpacity style={[styles.addImageIcon, styles.addImageBtn]} >
+              <Image
+                style={styles.addImageIcon}
+                source={Images.add}
+              />
+            </TouchableOpacity>
+          </View>
           <View style={styles.inputTxtView}>
             <Text style={styles.lableTxt}>Event Name</Text>
             <TextInput
@@ -57,7 +77,7 @@ class HomeScreen extends React.PureComponent<Props, State> {
             <Text style={styles.btnTxt}>UPLOAD</Text>
           </TouchableOpacity>
         </Content>
-      </Container>
+      </View>
     );
   }
 }

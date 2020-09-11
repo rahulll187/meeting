@@ -4,9 +4,7 @@ import { View, Text } from 'react-native';
 export default class UploadImagesScreen extends Component {
   render() {
     return (
-      <View style={{ alignItems: 'center' }}>
-        <Text>UploadImages Screen</Text>
-      </View>
+      <View />
     );
   }
 }

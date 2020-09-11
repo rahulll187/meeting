@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import {
-  SafeAreaView,
   ScrollView,
   View,
   Text,
-  ImageBackground,
   Image,
+  StatusBar
 } from 'react-native';
 import styles from './Stylels/index';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
-import AddEventsScreen from '../AddEvents/AddEventsScreen';
 import FeedbacksScreen from '../Feedbacks/FeedbacksScreen';
 import IndividualScreen from '../Individual/IndividualScreen';
 import NewMemberRequestsScreen from '../NewMemberRequests/NewMemberRequestsScreen';
@@ -40,14 +38,14 @@ const AddEventsStackNavigator = createStackNavigator(
       return {
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 10, color: Colors.white }}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
           />
         ),
         headerStyle: { backgroundColor: Colors.lightGreen },
-        headerTitleStyle: { color: Colors.grey }
+        headerTitleStyle: { color: Colors.white }
       };
     },
   }
@@ -62,14 +60,14 @@ const FeedbacksStackNavigator = createStackNavigator(
       return {
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 10, color: Colors.white }}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
           />
         ),
         headerStyle: { backgroundColor: Colors.lightGreen },
-        headerTitleStyle: { color: Colors.grey }
+        headerTitleStyle: { color: Colors.white }
       };
     },
   }
@@ -84,14 +82,14 @@ const IndividualStackNavigator = createStackNavigator(
       return {
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 10, color: Colors.white }}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
           />
         ),
         headerStyle: { backgroundColor: Colors.lightGreen },
-        headerTitleStyle: { color: Colors.grey }
+        headerTitleStyle: { color: Colors.white }
       };
     },
   }
@@ -106,14 +104,14 @@ const NewMemberRequestsStackNavigator = createStackNavigator(
       return {
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 10, color: Colors.white }}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
           />
         ),
         headerStyle: { backgroundColor: Colors.lightGreen },
-        headerTitleStyle: { color: Colors.grey }
+        headerTitleStyle: { color: Colors.white }
       };
     },
   }
@@ -128,14 +126,14 @@ const OrganizationStackNavigator = createStackNavigator(
       return {
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 10, color: Colors.white }}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
           />
         ),
         headerStyle: { backgroundColor: Colors.lightGreen },
-        headerTitleStyle: { color: Colors.grey }
+        headerTitleStyle: { color: Colors.white }
       };
     },
   }
@@ -150,14 +148,14 @@ const SharedMealStackNavigator = createStackNavigator(
       return {
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 10, color: Colors.white }}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
           />
         ),
         headerStyle: { backgroundColor: Colors.lightGreen },
-        headerTitleStyle: { color: Colors.grey }
+        headerTitleStyle: { color: Colors.white }
       };
     },
   }
@@ -172,14 +170,14 @@ const TeamStackNavigator = createStackNavigator(
       return {
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 10, color: Colors.white }}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
           />
         ),
         headerStyle: { backgroundColor: Colors.lightGreen },
-        headerTitleStyle: { color: Colors.grey }
+        headerTitleStyle: { color: Colors.white }
       };
     },
   }
@@ -194,14 +192,14 @@ const TeamComplaintsStackNavigator = createStackNavigator(
       return {
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 10, color: Colors.white }}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
           />
         ),
         headerStyle: { backgroundColor: Colors.lightGreen },
-        headerTitleStyle: { color: Colors.grey }
+        headerTitleStyle: { color: Colors.white }
       };
     },
   }
@@ -216,14 +214,14 @@ const TopDonorsStackNavigator = createStackNavigator(
       return {
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 10, color: Colors.white }}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
           />
         ),
         headerStyle: { backgroundColor: Colors.lightGreen },
-        headerTitleStyle: { color: Colors.grey }
+        headerTitleStyle: { color: Colors.white }
       };
     },
   }
@@ -238,14 +236,14 @@ const UploadImagesStackNavigator = createStackNavigator(
       return {
         headerLeft: (
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 10, color: Colors.white }}
             onPress={() => navigation.openDrawer()}
             name="md-menu"
             size={30}
           />
         ),
         headerStyle: { backgroundColor: Colors.lightGreen },
-        headerTitleStyle: { color: Colors.grey }
+        headerTitleStyle: { color: Colors.white }
       };
     },
   }
@@ -257,10 +255,19 @@ const DrawerNavigator = createDrawerNavigator(
       screen: IndividualStackNavigator,
       navigationOptions: {
         drawerLabel: 'Individual',
+        labelStyle: {
+          color: Colors.white
+        },
         drawerIcon: ({ tintColor }) => (
           <Icon name="user" size={16} color={tintColor} />
         ),
+        contentOptions: {
+          labelStyle: {
+            color: Colors.white
+          },
+        }
       },
+
     },
     Organization: {
       screen: OrganizationStackNavigator,
@@ -350,6 +357,7 @@ const DrawerNavigator = createDrawerNavigator(
   {
     contentComponent: props => (
       <ScrollView style={{ flex: 1 }}>
+        <StatusBar translucent backgroundColor="transparent" />
         {/* <ImageBackground
           source={require('../../assets/Images/menu.png')}
           style={styles.drawerProfile}> */}
@@ -363,7 +371,7 @@ const DrawerNavigator = createDrawerNavigator(
         {/* </ImageBackground> */}
         <View style={styles.scrollViewStyle}>
           <Text style={styles.drawerHeader}>Donation Reports</Text>
-          <DrawerItems {...props} />
+          <DrawerItems {...props} labelStyle={{ color: Colors.white }} />
           <View style={styles.line} />
         </View>
       </ScrollView>
